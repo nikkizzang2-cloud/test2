@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>MATCH THE FACE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <details class="intro">
+      <summary class="w">
+       MATCH THE FACE
+      </summary>
+      <div class="w-detail">
+        <p>
+          EVEN IF TWO FACES LOOK IDENTICAL, CAN WE STILL SAY THEY BELONG TO THE SAME PERSON. WHERE MEMORY
+          SPLITS, A SINGLE CHARACTER UNFOLDS INTO DIFFERENT LIVES AND DIFFERENT SELVES.
+        </p>
+        <p>
+          CLICK EACH FACE CARD TO READ THAT VERSION’S MEMORIES AND CIRCUMSTANCES, THEN TRY MATCHING THE
+          CARDS YOU BELIEVE BELONG TO THE SAME PERSON.
+        </p>
+      </div>
+    </details>
+
+    <div id="viewport" class="viewport">
+      <div id="world" class="world">
+        <!-- 카드와 그룹 패널, PDF 프리뷰 모달이 JS에서 여기에 붙는다 -->
+      </div>
+    </div>
+
+    <!-- 인물 정보 모달 -->
+    <div id="modal" class="modal" hidden>
+      <div id="modalBackdrop" class="modal-backdrop"></div>
+      <div class="modal-panel">
+        <button id="modalClose" class="modal-close" type="button">&times;</button>
+        <h2 id="modalName"></h2>
+        <p id="modalRole"></p>
+        <div class="modal-bio-wrap">
+          <p id="modalBioKo"></p>
+          <p id="modalBioEn"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PDF 미리보기 모달 -->
+    <div id="pdfPreviewModal" class="pdf-preview-modal" hidden>
+      <div class="pdf-preview-backdrop" data-pdf-close></div>
+
+      <div class="pdf-preview-ui">
+        <button id="pdfDownloadBtn" class="pdf-pill-btn" type="button">download PDF</button>
+        <button id="pdfPreviewCloseBtn" class="pdf-pill-btn" type="button">close</button>
+      </div>
+
+      <div class="pdf-preview-shell">
+        <iframe
+          id="pdfPreviewFrame"
+          class="pdf-preview-frame"
+          title="PDF preview"
+          src=""
+
+        ></iframe>
+      </div>
+    </div>
+
+<div class="minimap" id="minimap" aria-label="World minimap">
+  <div class="minimap__label"></div>
+  <div class="minimap__stage" id="minimapStage">
+    <div class="minimap__viewport" id="minimapViewport"></div>
+  </div>
+</div>
+    
+
+    <script src="script.js"></script>
+  </body>
+</html>
